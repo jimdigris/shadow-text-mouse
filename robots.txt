@@ -1,0 +1,8 @@
+User-agent: Yandex 
+Disallow: /input
+
+User-agent: * 
+Disallow: /input
+
+Host: http://vl.it-mylives.ru/
+Sitemap: 
