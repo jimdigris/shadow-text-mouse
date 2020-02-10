@@ -2,6 +2,7 @@
 
 (function () {
     const INITIAL_SCREEN = document.querySelector('#initialScreen');
+    const NAME_GAME = document.querySelector('#nameGame');
     const NAME_GAME_SHADOW = document.querySelector('#nameGameShadov');
 
     NAME_GAME_SHADOW.style.left = NAME_GAME_SHADOW.offsetLeft + 'px';
@@ -33,8 +34,18 @@
         setDirectionMoveShadow();       // двигаем тень
     });
 
+    window.addEventListener('resize', windowResize);
 
     // ---
+
+
+    function windowResize() {
+        NAME_GAME_SHADOW.style.left = NAME_GAME.offsetLeft + 'px';
+        NAME_GAME_SHADOW.style.top = NAME_GAME.offsetTop + 'px';
+        shadow.xOld = parseInt(NAME_GAME_SHADOW.style.left);
+        shadow.yOld = parseInt(NAME_GAME_SHADOW.style.top);
+        getShadowСoordinates();
+    }
 
     // определяем координаты тени до изменения
     function getShadowСoordinates() {
